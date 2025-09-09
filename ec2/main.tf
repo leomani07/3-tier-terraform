@@ -49,7 +49,7 @@ resource "aws_instance" "pub_server" {
   subnet_id                   = var.public_subnet_id
   vpc_security_group_ids      = [aws_security_group.public_sg.id]
   associate_public_ip_address = true
-  key_name                    = "bharathi"
+  key_name                    = "leo"
 
   user_data = file("${path.module}/user_data/pub-server.sh")
 
@@ -62,7 +62,7 @@ resource "aws_instance" "pvt_server" {
   subnet_id                   = var.private_subnet_id
   vpc_security_group_ids      = [aws_security_group.private_sg.id]
   associate_public_ip_address = false
-  key_name                    = "bharathi"
+  key_name                    = "leo"
 
   user_data = file("${path.module}/user_data/pvt-server.sh")
 
